@@ -1,20 +1,18 @@
 function volume_sphere(event) {
-    event.preventDefault(); // Prevent the form from submitting and page refreshing
-    
     // Get the value of the radius input field
-    var radius = parseFloat(document.getElementById("radius").value);
+  var radius = document.getElementById("radius").value;
 
-    // Check if the input is a valid number
-    if (!isNaN(radius)) {
-        // Calculate the volume of the sphere
-        var volume = (4/3) * Math.PI * Math.pow(radius, 3);
+  // Check if the input is a valid number
+  if (isNaN(radius)) {
+    alert("Please enter a valid number for the radius.");
+    return;
+  }
 
-        // Update the volume input field with the calculated value
-        document.getElementById("volume").value = volume.toFixed(2); // Rounded to 2 decimal places
-    } else {
-        // If the input is not a valid number, display an error message
-        document.getElementById("volume").value = "Invalid Input";
-    }
+  // Calculate the volume of the sphere
+  var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+
+  // Display the volume in the volume input field
+  document.getElementById("volume").value = volume.toFixed(2);
 }
 
 window.onload = function () {
