@@ -3,6 +3,7 @@ var radius = document.getElementById("radius").value;
 
 if (isNaN(radius) || radius === "") {
 	alert("Please enter a valid number for the radius.");
+	document.getElementById("volume").value = NaN;
 	return;
 }
 
